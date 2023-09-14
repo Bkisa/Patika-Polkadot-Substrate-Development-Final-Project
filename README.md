@@ -247,4 +247,29 @@ You can then shut down one of the nodes by pressing control+c and you will see t
 
 ## Adding Trusted Nodes to a Network
 
+Now we will generate a random secret phase and keys by running the following command:
+
+```bash
+./target/release/node-template key generate --scheme Sr25519 --password-interactive
+```
+It will ask you to enter a password and you can do that now.
+
+You can now use the seed phrase to derive keys using the Ed25519 signature scheme.
+
+For example, run a command similar to the following - 
+
+```bash
+./target/release/node-template key inspect --password-interactive --scheme Ed25519 "pig giraffe ceiling enter weird liar orange decline behind total despair fly"
+```
+**...**
+for other instruction: 
+```bash
+https://docs.substrate.io/tutorials/build-a-blockchain/add-trusted-nodes/
+```
+
+![](images/trusted-node-1.png)
+
+![](images/trusted-node-2.png)
+
+
 ## Smart Contracts
