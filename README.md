@@ -180,7 +180,9 @@ And now we just have to start the front end with the following command.
 This page should be opened automatically.
 ![](images/front-end.png)
 
-**4. Starting the node**
+## Simulating a Substrate Network
+
+**1. Starting the node**
 
 if you run the project as a node before, you may want to remove old datas. if you didn't, you can pass.
 
@@ -213,8 +215,35 @@ Start the local blockchain node using the “alice” account by running the fol
 
 ```
 
+**2. Adding another node**
 
-## Simulating a Substrate Network
+```bash
+./target/release/node-template 
+
+--base-path /tmp/bob 
+
+--chain local 
+
+--bob 
+
+--port 30334  
+
+--rpc-port 9934 
+
+--telemetry-url "wss://telemetry.polkadot.io/submit/ 0" 
+
+--validator 
+
+--bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp
+```
+![](images/sımulating-two-nodes.png)
+You can see the data transmission between two nodes, Also, they are running on local network.
+
+Now that both the nodes are running, all you need to do is observe whether both the terminals are showing the same messages, you will see similar lines in the terminals.
+
+You will see that node identity was discovered and the node has 1 peer where peer is the other node that we have started.
+
+You can then shut down one of the nodes by pressing control+c and you will see that the first node will have 0 peers remaining.
 
 ## Adding Trusted Nodes to a Network
 
